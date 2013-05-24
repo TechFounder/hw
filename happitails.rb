@@ -63,23 +63,25 @@ resp = gets.chomp.to_i
 
 case resp  
   when 1
-    clientlist do |x|
+    clientlist.each do |x|
     puts "Name: #{x.name}"
     puts "Age: #{x.age}"
     puts "Gender: #{x.gender}"
     puts "Kids: #{x.kids}"
     puts "Pets: #{x.pets}"
+    puts ""
     end
 
   when 2
-    animallist do |y|
+    animallist.each do |y|
     puts "Name: #{y.name}"
     puts "Kind: #{y.breed}"
     puts "Age: #{y.age}"
     puts "Gender: #{y.gender}"
     puts "Fav Toy: #{y.toy}"
+    puts ""
     end
-    
+
   when 3
     print "Welcome, please enter the following information"
     puts ""
