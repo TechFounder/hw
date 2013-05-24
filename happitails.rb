@@ -49,31 +49,54 @@ pinky = Animals.new("Pinky", "Cat", 13, "Female", "Sock")
 val = Animals.new("Val", "Snake", 3, "Male", "Hole")
 trex = Animals.new("T-Rex", "Dog", 5, "Male", "GitHub")
 
-print "Welcome to HappiTails"
-print "What would you like to do today?"
+
+puts "(1) List clients"
+puts "(2) List pets"
+puts "(3) Add clients"
+puts "(4) Add pets"
+puts "(5) Remove pets"
 puts ""
-print "(1) List clients"
-print "(2) List pets"
-print "(3) Add clients"
-print "(4) Add pets"
-print "(5) Remove pets"
+puts "Welcome to HappiTails"
+print "What would you like to do today? "
+
 resp = gets.chomp.to_i
 
-when resp = 3
-print "Welcome, please enter the following information"
-puts ""
-print "Your first name: "
-	name = gets.chomp.capitalize
-print "Your age: "
-	age = gets.chomp.to_i
-print "Your gender (Male or Female): "
-	gender = gets.chomp.capitalize
-print "How many kids do you have: "
-	kids = gets.chomp.to_i
-print "How many pets do you have: "
-	pets = gets.chomp.to_i
+case resp  
+  when 1
+    print "Here are all of the clients: #{ }"
 
-print "Welcome, please enter the following information"
-puts ""
-print "Pet name: "
-	
+  when 2
+    print "Here are all of the pets: #{}"
+
+  when 3
+    print "Welcome, please enter the following information"
+    puts ""
+    print "Your first name: "
+    	name = gets.chomp.capitalize
+    print "Your age: "
+    	age = gets.chomp.to_i
+    print "Your gender (Male or Female): "
+    	gender = gets.chomp.capitalize
+    print "How many kids do you have: "
+    	kids = gets.chomp.to_i
+    print "How many pets do you have: "
+    	pets = gets.chomp.to_i
+
+  when 4
+    print "Welcome, please enter the following information"
+    puts ""
+    print "Pet name: "
+      name = gets.chomp.capitalize
+    print "Kind of pet: "
+      breed = gets.chomp.capitalize
+    print "Age of pet: "
+      age = gets.chomp.to_i
+    print "Gender of pet: "
+      gender = gets.chomp.capitalize
+    print "Pet's favorite toy: "
+      toy = gets.chomp.capitalize
+
+  when 5
+    print "What's the name of the pet that you would like to remove: "
+
+end
