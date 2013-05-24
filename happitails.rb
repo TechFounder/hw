@@ -41,6 +41,7 @@ steve = Clients.new("Steve", 50, "Male", 1, 1)
 kate = Clients.new("Kate", 25, "Female", 0, 3)
 newt = Clients.new("Newt", 45, "Female", 4, 5)
 tom = Clients.new("Tom", 18, "Male", 0, 1)
+  clientlist = [john, steve, kate, newt, tom]
 
 gigi = Animals.new("Gigi", "Dog", 8, "Female", "Chewy")
 butch = Animals.new("Butch", "Dog", 3, "Male", "Ball")
@@ -48,7 +49,7 @@ mishka = Animals.new("Mishka", "Cat", 6, "Female", "Box")
 pinky = Animals.new("Pinky", "Cat", 13, "Female", "Sock")
 val = Animals.new("Val", "Snake", 3, "Male", "Hole")
 trex = Animals.new("T-Rex", "Dog", 5, "Male", "GitHub")
-
+  animallist = [gigi, butch, mishka, pinky, val, trex]
 
 puts "(1) List clients"
 puts "(2) List pets"
@@ -58,15 +59,23 @@ puts "(5) Remove pets"
 puts ""
 puts "Welcome to HappiTails"
 print "What would you like to do today? "
-
 resp = gets.chomp.to_i
 
 case resp  
   when 1
-    print "Here are all of the clients: #{ }"
+    clientlist do |x|
+    puts "Name: #{x.name}"
+    puts "Age: #{x.age}"
+    puts "Gender: #{x.gender}"
+    puts "Kids: #{x.kids}"
+    puts "Pets: #{x.pets}"
+    end
 
   when 2
-    print "Here are all of the pets: #{}"
+    animallist do |y|
+    puts "Name: #{y.name}"
+    puts "Kind: #{y.breed}"
+    puts ""
 
   when 3
     print "Welcome, please enter the following information"
@@ -98,5 +107,10 @@ case resp
 
   when 5
     print "What's the name of the pet that you would like to remove: "
+      remove = gets.chomp.capitalize
+    if remove == pets.name
 
+    end 
 end
+
+
