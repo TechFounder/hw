@@ -17,14 +17,14 @@ end
 
 class Animals
 
-  attr_accessor :name, :breed, :age, :gender, :toys
+  attr_accessor :name, :breed, :age, :gender, :toy
 
-  def initialize(name, breed, age, gender, toys)
+  def initialize(name, breed, age, gender, toy)
     @name = name
     @breed = breed
     @age = age
     @gender = gender
-    @toys = toys
+    @toys = toy
   end
 
   def listAnimalsYes
@@ -75,8 +75,11 @@ case resp
     animallist do |y|
     puts "Name: #{y.name}"
     puts "Kind: #{y.breed}"
-    puts ""
-
+    puts "Age: #{y.age}"
+    puts "Gender: #{y.gender}"
+    puts "Fav Toy: #{y.toy}"
+    end
+    
   when 3
     print "Welcome, please enter the following information"
     puts ""
