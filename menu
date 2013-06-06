@@ -1,0 +1,22 @@
+  puts "(1) List clients"
+  puts "(2) List pets"
+  puts "(3) Add clients"
+  puts "(4) Add pets"
+  puts "(5) Remove pets"
+  puts ""
+  puts "Welcome to HappiTails"
+  print "What would you like to do today? "
+  resp = gets.chomp.to_i
+
+case resp
+
+when 1
+   puts "One"
+
+when 2
+   puts "Two"
+
+when 3
+    puts "Three"
+
+end    

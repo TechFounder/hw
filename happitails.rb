@@ -37,11 +37,12 @@ class Shelter
       puts "Gender: #{x.gender}"
       puts "Kids: #{x.kids}"
       puts "Pets: #{x.pets}"
-      puts ""
+      puts " "
     end
   end
+end
 
-  class Client
+class Client
 
     attr_accessor :name, :age, :gender, :kids, :pets
 
@@ -52,9 +53,9 @@ class Shelter
       @kids = kids
       @pets = pets
     end
-  end
+end
 
-  class Animal
+class Animal
 
     attr_accessor :name, :breed, :age, :gender, :toy
 
@@ -65,7 +66,7 @@ class Shelter
       @gender = gender
       @toy = toy
     end
-  end
+end
 
 
   shelter = Shelter.new('HappiTails')
@@ -103,55 +104,53 @@ class Shelter
   print "What would you like to do today? "
   resp = gets.chomp.to_i
 
-  case resp
+case resp
 
-  when 1
-    puts client.to_clients
+when 1
+   shelter.to_clients
 
-  when 2
-    puts animal.to_animals
+when 2
+   shelter.to_animals
 
+when 3
+  print "Welcome, please enter the following information"
+  puts ""
+  print "Your first name: "
+  name = gets.chomp.capitalize
+  print "Your age: "
+  age = gets.chomp.to_i
+  print "Your gender (Male or Female): "
+  gender = gets.chomp.capitalize
+  print "How many kids do you have: "
+  kids = gets.chomp.to_i
+  print "How many pets do you have: "
+  pets = gets.chomp.to_i
 
-  when 3
-    print "Welcome, please enter the following information"
-    puts ""
-    print "Your first name: "
-    name = gets.chomp.capitalize
-    print "Your age: "
-    age = gets.chomp.to_i
-    print "Your gender (Male or Female): "
-    gender = gets.chomp.capitalize
-    print "How many kids do you have: "
-    kids = gets.chomp.to_i
-    print "How many pets do you have: "
-    pets = gets.chomp.to_i
+  client = Client.new(name, age, gender, kids, pets)
+  shelter.add_client(client)
 
-    client = Client.new(name, age, gender, kids, pets)
-    shelter.add_client(client)
+when 4
+  print "Welcome, please enter the following information"
+  puts ""
+  print "Pet name: "
+  name = gets.chomp.capitalize
+  print "Kind of pet: "
+  breed = gets.chomp.capitalize
+  print "Age of pet: "
+  age = gets.chomp.to_i
+  print "Gender of pet: "
+  gender = gets.chomp.capitalize
+  print "Pet's favorite toy: "
+  toy = gets.chomp.capitalize
 
-  when 4
-    print "Welcome, please enter the following information"
-    puts ""
-    print "Pet name: "
-    name = gets.chomp.capitalize
-    print "Kind of pet: "
-    breed = gets.chomp.capitalize
-    print "Age of pet: "
-    age = gets.chomp.to_i
-    print "Gender of pet: "
-    gender = gets.chomp.capitalize
-    print "Pet's favorite toy: "
-    toy = gets.chomp.capitalize
+  animal = Animal.new(name, breed, age, gender, toy)
+  shelter.add_animal(animal)
 
-    animal = Animal.new(name, breed, age, gender, toy)
-    Shelter.add_animal(animal)
+when 5
+  print "What's the name of the pet that you would like to remove: "
+  remove = gets.chomp.capitalize
+  Animal.all.each
+  if remove == pets.a_name.delete_animal
 
-  when 5
-    print "What's the name of the pet that you would like to remove: "
-    remove = gets.chomp.capitalize
-    Animal.all.each
-    if remove == pets.a_name.delete_animal
-
-    end
   end
 end
